@@ -3,6 +3,10 @@ class GeotimeController < ApplicationController
   end
 
   def create
-    redirect_to root_url, status: 200
+    redirect_to geotimes_path
+  end
+
+  def show
+    
   end
 end

@@ -6,5 +6,8 @@ describe 'time service' do
     fill_in 'latitude', with: '41.882656'
     fill_in 'longitude', with: '-87.623304'
     click_button 'Submit'
+    expect(page).to have_content Time.parse('8am')
+    expect(page).to have_content '41.882656'
+    expect(page).to have_content '-87.623304'
   end
 end
