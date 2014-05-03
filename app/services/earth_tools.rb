@@ -1,7 +1,7 @@
-require 'net/http'
-require 'nokogiri'
-
-module EarthTools
+class EarthTools
+  require 'net/http'
+  require 'nokogiri'
+  
   def timezone(lat, long)
     parse_localtime get_raw_xml(lat, long)
   end

@@ -1,10 +1,7 @@
 require 'spec_helper'
 
-describe 'EarthTools' do
-  let(:earthtools) do
-    @earthtools = Object.new
-    @earthtools.extend(EarthTools)
-  end
+describe EarthTools do
+  let(:earthtools) { EarthTools.new }
 
   describe '#timezone' do
     let(:lat) { '41.882656' }
