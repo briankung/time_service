@@ -1,0 +1,2 @@
+module GeotimeHelper
+end
