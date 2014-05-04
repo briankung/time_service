@@ -11,6 +11,6 @@ class GeotimeController < ApplicationController
   end
 
   def show
-    
+    @geotime = Geotime.find(params[:id])
   end
 end

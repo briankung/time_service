@@ -1,7 +1,7 @@
-<%= form_tag 'geotime#create', method: 'post' do %>
-	<%= label_tag :latitude, "Latitude:" %>
-	<%= text_field_tag :latitude %>
-	<%= label_tag :longitude, "Longitude:" %>
-	<%= text_field_tag :longitude %>
-	<%= submit_tag 'Submit' %>
+<%= form_for @geotime, url: {action: "create"} do |f| %>
+	<%= f.label :lat, "Latitude:" %>
+  <%= f.text_field :lat %>
+  <%= f.label :long, "Longitude" %>
+  <%= f.text_field :long %>
+  <%= f.submit "Submit" %>
 <% end %>
