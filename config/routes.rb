@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
   root to: 'geotime#new'
-  post '/geotime' => 'geotime#create'
-  get '/geotime/show' => 'geotime#show', as: 'geotimes'
+  resources :geotime, only: [:create, :show, :new]
 end

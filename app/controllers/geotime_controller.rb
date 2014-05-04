@@ -1,9 +1,11 @@
 class GeotimeController < ApplicationController
   def new
+    @geotime = Geotime.new
   end
 
   def create
-    redirect_to geotimes_path
+    @geotime = Geotime.create(params.permit(:lat,:long))
+    redirect_to geotime_path(@geotime)
   end
 
   def show
