@@ -4,7 +4,9 @@ class GeotimeController < ApplicationController
   end
 
   def create
-    @geotime = Geotime.create(params.permit(:lat,:long))
+    @geotime = Geotime.new(params[:geotime].permit(:lat,:long))
+    @geotime.earthtools_time = EarthTools.new.timezone(params[:geotime][:lat], params[:geotime][:long])
+    @geotime.save!
     redirect_to geotime_path(@geotime)
   end
 

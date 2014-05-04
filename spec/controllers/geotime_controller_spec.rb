@@ -16,6 +16,9 @@ describe GeotimeController do
         expect {
           post :create, {:geotime => valid_attributes}, {}
         }.to change(Geotime, :count).by(1)
+        expect(Geotime.last.lat).to_not be_nil
+        expect(Geotime.last.long).to_not be_nil
+        expect(Geotime.last.earthtools_time).to_not be_nil
       end
 
       it "assigns a newly created geotime as @geotime" do
